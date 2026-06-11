@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas Interativas - Agro Sustentável</title>
+    <link rel="stylesheet" href="ferramentas.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Agro Sustentável</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#calculadora">Calculadora de Água</a></li>
+                    <li><a href="#mapa-pr">Mapa do Paraná</a></li>
+                    <li><a href="#energia">Energia</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="calculadora" class="card-section">
+            <h2>Calculadora de Consumo e Economia de Água</h2>
+            <p>Descubra quanta água você pode economizar adotando o sistema de **gotejamento sustentável** em comparação com a aspersão tradicional.</p>
+            
+            <div class="calculadora-box">
+                <div class="input-group">
+                    <label for="hectares">Tamanho da plantação (em Hectares):</label>
+                    <input type="number" id="hectares" min="1" value="10" placeholder="Ex: 10">
+                </div>
+                <button onclick="calcularAgua()">Calcular Impacto</button>
+                
+                <div id="resultado-calculo" class="resultado hidden">
+                    <p>💡 **Resultado Estimado por Dia:**</p>
+                    <ul>
+                        <li>Consumo Tradicional: <span id="cons-tradicional">0</span> litros</li>
+                        <li>Consumo com Gotejamento: <span id="cons-sustentavel">0</span> litros</li>
+                        <li class="destaque">Água Economizada: <span id="economia">0</span> litros por dia!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="mapa-pr" class="card-section">
+            <h2>Mapa Interativo do Paraná: Produção por Região</h2>
+            <p>Clique em uma região do mapa para ver o forte do agronegócio local e suas práticas sustentáveis.</p>
+            
+            <div class="mapa-container">
+                <svg viewBox="0 0 600 400" class="svg-mapa">
+                    <path d="M 50,80 L 220,50 L 200,160 L 70,180 Z" class="regiao" onclick="infoRegiao('noroeste')" />
+                    <text x="100" y="110" class="label-mapa">Noroeste</text>
+                    
+                    <path d="M 220,50 L 400,60 L 380,180 L 200,160 Z" class="regiao" onclick="infoRegiao('norte')" />
+                    <text x="280" y="110" class="label-mapa">Norte</text>
+                    
+                    <path d="M 40,190 L 150,170 L 170,280 L 30,290 Z" class="regiao" onclick="infoRegiao('oeste')" />
+                    <text x="70" y="240" class="label-mapa">Oeste</text>
+                    
+                    <path d="M 150,170 L 380,180 L 350,320 L 170,280 Z" class="regiao" onclick="infoRegiao('centro')" />
+                    <text x="230" y="240" class="label-mapa">Centro-Sul</text>
+                    
+                    <path d="M 400,60 L 580,120 L 520,300 L 350,320 L 380,180 Z" class="regiao" onclick="infoRegiao('leste')" />
+                    <text x="440" y="200" class="label-mapa">Leste / RMC</text>
+                </svg>
+
+                <div id="info-mapa" class="painel-mapa">
+                    <h3>Selecione uma região no mapa</h3>
+                    <p>Os dados de produção aparecerão aqui.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="energia" class="card-section">
+            <h2>Simulador de Autossuficiência Energética</h2>
+            <p>Ajuste a quantidade de painéis solares ou biodigestores na fazenda e veja a redução na pegada de carbono.</p>
+            
+            <div class="energia-box">
+                <div class="slider-group">
+                    <label for="slider-energia">Cobertura de Energia Renovável na Fazenda: <span id="porcentagem-energia">50%</span></label>
+                    <input type="range" id="slider-energia" min="0" max="100" value="50" oninput="atualizarEnergia(this.value)">
+                </div>
+
+                <div class="status-energia-container">
+                    <div class="status-card">
+                        <h4>Conta de Luz da Fazenda</h4>
+                        <p id="status-conta">Redução de 50%</p>
+                    </div>
+                    <div class="status-card">
+                        <h4>Planeta Agradece</h4>
+                        <p id="status-co2">Evita 5 toneladas de CO₂/ano</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projeto Agro Forte, Futuro Sustentável. Tecnologias Verdes.</p>
+    </footer>
+
+    <script src="ferramentas.js"></script>
+</body>
+</html>

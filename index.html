@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Agro Sustentável</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#praticas">Práticas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>Equilíbrio entre Produção e Meio Ambiente</h2>
+                <p>O futuro da humanidade depende de uma agricultura que produza alimentos em larga escala sem esgotar os recursos do nosso planeta.</p>
+                <a href="#praticas" class="btn">Explore as Soluções</a>
+            </div>
+        </section>
+
+        <section id="praticas" class="interativo">
+            <div class="container">
+                <h2>Descubra as Práticas Sustentáveis</h2>
+                <p>Clique nos botões abaixo para aprender como o agronegócio pode proteger a natureza.</p>
+                
+                <div class="botoes-praticas">
+                    <button class="btn-pratica" onclick="mostrarInfo('ilpf')">Sistema ILPF</button>
+                    <button class="btn-pratica" onclick="mostrarInfo('plantio')">Plantio Direto</button>
+                    <button class="btn-pratica" onclick="mostrarInfo('agua')">Uso Inteligente da Água</button>
+                    <button class="btn-pratica" onclick="mostrarInfo('energia')">Energia Renovável</button>
+                </div>
+
+                <div id="info-display" class="painel-info">
+                    <h3>Selecione uma prática acima</h3>
+                    <p>A informação sobre a técnica sustentável aparecerá aqui.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projeto Agro Forte, Futuro Sustentável. Criado para educar e inspirar.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
